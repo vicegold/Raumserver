@@ -1,0 +1,15 @@
+.rsp-header {
+  background: $color-gray--light;
+  height: $header;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $color-gray--dark;
+}
+
+.rsp-header__logo {
+  fill: $color-white;
+  height: 34px;
+  width: 30px;
+  margin-left: 19px;
+}

@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// Global debugging styles.
+// -----------------------------------------------------------------------------
+.debug-mode {
+    $highlight-color: _("color", "brand-warning");
+    $grid-color: _("color", "black");
+
+    position: relative;
+
+    // baseline grid
+    &::after {
+        background-color: transparent;
+        background-image: linear-gradient($highlight-color, $highlight-color),
+                          linear-gradient(transparent calc(100% - 1px), rgba($grid-color, 0.1) 0%),
+                          linear-gradient(transparent calc(50% - 1px), rgba($grid-color, 0.05) 50%, transparent calc(50% + 1px));
+        background-size: 100% _("grid", "vertical-base");
+        background-repeat: no-repeat, repeat, repeat;
+        content: "vertical rhythm grid (factor: #{_("grid", "vertical-base")})";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        text-indent: _("grid", "gutter-width") / 2;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    // breakpoints indicator
+    &::before {
+        background-color: $highlight-color;
+        color: #000;
+        right: 0;
+        padding: 0 _("grid", "gutter-width") / 2;
+        position: fixed;
+        top: 0;
+        z-index: _("z", "debug");
+
+        @each $name, $data in _("breakpoints") {
+            $class-name: map-get($data, "class");
+            $min-width: map-get($data, "min-width");
+
+            @media (min-width: $min-width) {
+                content: "#{$name} .#{$class-name} (min-width: #{$min-width})";
+            }
+        }
+    }
+}

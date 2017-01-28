@@ -1,0 +1,26 @@
+.rsp-player {
+  background: $color-gray--dark;
+  height: $player;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.rsp-player__current {
+  width: 20%;
+}
+
+.rsp-current__cover {
+  height: #{$player * 0.6};
+  width: auto;
+  border-radius: 2px;
+}
+
+.rsp-player__interactive {
+  width: 60%;
+}
+
+.rsp-player__settings {
+  width: 20%;
+}

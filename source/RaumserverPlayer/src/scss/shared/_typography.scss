@@ -1,0 +1,71 @@
+// -----------------------------------------------------------------------------
+// Common font weights.
+// http://www.w3.org/TR/css3-fonts/#font-weight-prop
+//
+// 100 - Thin
+// 200 - Extra Light (Ultra Light)
+// 300 - Light
+// 400 - Normal
+// 500 - Medium
+// 600 - Semi Bold (Demi Bold)
+// 700 - Bold
+// 800 - Extra Bold (Ultra Bold)
+// 900 - Black (Heavy)
+// -----------------------------------------------------------------------------
+:root {
+    font-size: 16px;
+}
+
+body {
+    color: _("color", "text-primary");
+    font-family: _("font", "text-family");
+    line-height: _("font", "text-line-height");
+    text-rendering: _("font", "text-rendering");
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color: $color-white;
+    font-family: _("font", "text-family");
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 300;
+    vertical-align: baseline;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h1, .h1 {
+    font-size: 2rem;
+}
+
+h2, .h2 {
+    font-size: 0.9rem;
+}
+
+h3, .h3 {
+    font-size: 1.25rem;
+}
+
+h4, .h4 {
+    font-size: 1.125rem;
+}
+
+h5, .h5 {
+    font-size: 1rem;
+}
+
+p, .paragraph {
+    margin-top: _("grid", "vertical-base");
+    margin-bottom: _("grid", "vertical-base");
+}
+
+ul,
+ol {
+    margin-top: _("grid", "vertical-base");
+    margin-bottom: _("grid", "vertical-base");
+}

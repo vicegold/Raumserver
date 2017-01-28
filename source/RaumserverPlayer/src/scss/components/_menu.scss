@@ -1,0 +1,37 @@
+.rsp-menu {
+  background: $color-gray;
+  width: 240px;
+
+  ul {
+    margin: 0;
+  }
+}
+
+.rsp-menu__headline {
+  padding: 26px 0 0 20px;
+}
+
+.rsp-menu__item {
+  padding: 10px 20px;
+  color: $color-gray--lighter;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.rsp-menu__item--active {
+  box-shadow: inset 4px 0px 0px 0px $color-red;
+  background: lighten($color-gray, 2%);
+}
+
+.rsp-menu__icon {
+  width: 13px;
+  height: 13px;
+  fill: $color-white;
+  transform: translateY(-1px);
+  margin-right: 10px;
+}
+
+.rsp-menu__icon--home {
+  transform: translateY(-2px);
+}

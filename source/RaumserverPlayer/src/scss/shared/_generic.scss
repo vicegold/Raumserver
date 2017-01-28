@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// Generic styles.
+// -----------------------------------------------------------------------------
+:root {
+    box-sizing: border-box;
+    transition-duration: 200ms;
+    transition-property: none;
+}
+
+*,
+*::before,
+*::after {
+    border-color: inherit;
+    box-sizing: inherit;
+    transition-duration: inherit;
+    transition-property: inherit;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+}
+
+.rsp-container {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.rsp-content {
+  display: flex;
+  align-items: stretch;
+  height: calc(100vh - #{$header} - #{$player});
+}

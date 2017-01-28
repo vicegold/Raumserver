@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>RaumserverPlayer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/styles/styles.css?v=@version">
+    </head>
+    <body>
+
+      <div class="rsp-container">
+        <header class="rsp-header">
+          <svg class="rsp-header__logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/sprites/logos.svg#raumfeld"></use></svg>
+        </header>
+
+        <div class="rsp-content">
+          <div class="rsp-menu">
+            <h2 class="rsp-menu__headline">Sources</h2>
+            <ul>
+              <li class="rsp-menu__item">
+                <svg class="rsp-menu__icon rsp-menu__icon--home"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/sprites/icons.svg#home"></use></svg>
+                <span>Home</span>
+              </li>
+              <li class="rsp-menu__item rsp-menu__item--active">
+                <svg class="rsp-menu__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/sprites/logos.svg#tunein"></use></svg>
+                <span>TuneIn</span>
+              </li>
+              <li class="rsp-menu__item">
+                <svg class="rsp-menu__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/sprites/icons.svg#collection"></use></svg>
+                <span>Meine Musik</span>
+              </li>
+              <li class="rsp-menu__item">
+                <svg class="rsp-menu__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/sprites/icons.svg#playlist"></use></svg>
+                <span>Playlisten</span>
+              </li>
+              <li class="rsp-menu__item">
+                <svg class="rsp-menu__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/sprites/logos.svg#spotify"></use></svg>
+                <span>Spotify</span>
+              </li>
+              <li class="rsp-menu__item">
+                <svg class="rsp-menu__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/sprites/logos.svg#soundcloud"></use></svg>
+                <span>SoundCloud</span>
+              </li>
+              <li class="rsp-menu__item">
+                <svg class="rsp-menu__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/sprites/icons.svg#line-in"></use></svg>
+                <span>Line-In</span>
+              </li>
+              <li class="rsp-menu__item">
+                <svg class="rsp-menu__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/sprites/icons.svg#cast"></use></svg>
+                <span>Chromecast</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rsp-player">
+          <div class="rsp-player__current">
+            <img src="https://images.rapgenius.com/7f7ea6a37f44adce6643907814d47308.500x500x1.jpg" alt="Flume &ndash; Never Be Like You" class="rsp-current__cover">
+            <div class="rsp-current__meta">
+              <span class="rsp-current__album">Skin</span>
+              <div class="rsp-current__title">Never Be Like You</div>
+              <div class="rsp-current__Artist">Flume</div>
+            </div>
+          </div>
+          <div class="rsp-player__interactive">
+            <div class="rsp-player__controls">
+              <div class="rsp-controls__shuffle"></div>
+              <div class="rsp-controls__prev"></div>
+              <div class="rsp-controls__play"></div>
+              <div class="rsp-controls__next"></div>
+              <div class="rsp-controls__repeat"></div>
+            </div>
+            <div class="rsp-player__seek"></div>
+          </div>
+          <div class="rsp-player__settings">
+            meta
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+        <!-- https://varvy.com/pagespeed/defer-loading-javascript.html -->
+        <script type="text/javascript">
+            window.addEventListener("load", function() {
+                var element = document.createElement("script");
+                element.src = "@scriptsPath/App.js?v=@version";
+                document.body.appendChild(element);
+            }, false);
+        </script>
+    </body>
+</html>

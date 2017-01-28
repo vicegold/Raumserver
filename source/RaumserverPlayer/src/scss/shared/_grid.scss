@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// Global application grid.
+// -----------------------------------------------------------------------------
+.grid-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 58.75rem; // 940px
+    overflow: hidden;
+    padding-left: _("grid", "gutter-width") / 2;
+    padding-right: _("grid", "gutter-width") / 2;
+}
+
+.grid-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: _("grid", "gutter-width") / -2;
+    margin-right: _("grid", "gutter-width") / -2;
+
+    > .column {
+        padding-left: _("grid", "gutter-width") / 2;
+        padding-right: _("grid", "gutter-width") / 2;
+        width: 100%;
+
+        @each $name, $data in _("breakpoints") {
+            $total-columns: _("grid", "total-columns");
+            $class-name: map-get($data, "class");
+            $min-width: map-get($data, "min-width");
+
+            @media (min-width: $min-width) {
+                @for $i from 1 through $total-columns {
+                    &#{unquote(".-" + $class-name + "-" + $i)} {
+                        width: #{$i / $total-columns * 100%};
+                    }
+                }
+            }
+        }
+    }
+}

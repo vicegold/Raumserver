@@ -1,0 +1,164 @@
+$config: ();
+
+// -----------------------------------------------------------------------------
+// Define your color palette over here.
+// -----------------------------------------------------------------------------
+
+$color-white: #fff;
+$color-gray: #21252b;
+$color-gray--light: #282c34;
+$color-gray--lighter: #606060;
+$color-gray--dark: #181a1f;
+$color-red: #c02127;
+
+// -----------------------------------------------------------------------------
+// Sizes.
+// -----------------------------------------------------------------------------
+
+$header: 50px;
+$player: 100px;
+
+// -----------------------------------------------------------------------------
+// Color merge.
+// -----------------------------------------------------------------------------
+
+$config: map-merge(
+    $config, (
+        "color": (
+            "black": #000,
+            "denim": #1c65d9,
+            "tuatara": #3c3c3b,
+            "dusty-tuatara": #9c9c9c,
+            "silver": #c8c8c8,
+            "alto": #e0e0e0,
+            "japanese-laurel": #06a20d,
+            "purple-heart": #673ab7,
+            "red-orange": #f33,
+            "white": #fff,
+            "saffron": #fac135
+        )
+    )
+);
+
+
+// -----------------------------------------------------------------------------
+// Color associations.
+// -----------------------------------------------------------------------------
+$config: map-merge(
+    $config, (
+        "color": map-merge(
+            _("color"), (
+            "brand-primary": _("color", "red-orange"),
+            "brand-success": _("color", "japanese-laurel"),
+            "brand-info": _("color", "denim"),
+            "brand-warning": _("color", "saffron"),
+            "background-primary": _("color", "white"),
+            "headline-primary": _("color", "black"),
+            "text-primary-inverted": _("color", "white"),
+            "text-primary": _("color", "black"),
+            "text-silent": _("color", "silver")
+            )
+        )
+    )
+);
+
+
+// -----------------------------------------------------------------------------
+// Typography.
+// -----------------------------------------------------------------------------
+$config: map-merge(
+    $config, (
+        "font": (
+            "text-family": (system, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif),
+            "text-line-height": 1.5rem,
+            "text-rendering": optimizeLegibility,
+            "headline-family": (Georgia, Times, Times New Roman, serif)
+        )
+    )
+);
+
+
+// -----------------------------------------------------------------------------
+// Resolution relative settings. Excerpt from Google web fundamentals:
+//
+// - Create breakpoints based on content, never on specific devices, products,
+//   or brands.
+// - Design for the smallest mobile device first, then progressively enhance
+//   the experience as more screen real estate becomes available.
+// - Keep lines of text to a maximum of around 70 or 80 characters.
+//
+// https://goo.gl/EDZOAH
+// -----------------------------------------------------------------------------
+$config: map-merge(
+    $config, (
+        "breakpoints": (
+            "mobile-s": (
+                "min-width": 20em, // 320px
+                "class": "ms"
+            ),
+            "mobile-m": (
+                "min-width": 23.4375em, // 375px
+                "class": "mm"
+            ),
+            "mobile-l": (
+                "min-width": 26.5625em, // 425px
+                "class": "ml"
+            ),
+            "tablet": (
+                "min-width": 48em, // 768px
+                "class": "tb"
+            ),
+            "laptop": (
+                "min-width": 64em, // 1024px
+                "class": "lp"
+            ),
+            "laptop-l": (
+                "min-width": 90em, // 1440px
+                "class": "ll"
+            ),
+            "4k": (
+                "min-width": 160em, // 2560px
+                "class": "4k"
+            ),
+        )
+    )
+);
+
+
+// -----------------------------------------------------------------------------
+// Global grid.
+// -----------------------------------------------------------------------------
+$config: map-merge(
+    $config, (
+        "grid": (
+            "vertical-base": _("font", "text-line-height"),
+            "total-columns": 12,
+            "gutter-width": 1.5rem,  // 24px
+            "max-width": 72.5rem     // 1160px
+        )
+    )
+);
+
+
+// -----------------------------------------------------------------------------
+// Z-index listing.
+// -----------------------------------------------------------------------------
+$config: map-merge(
+    $config, (
+        "z": (
+            "default": 0,
+            "overlay": 100,
+            "debug": 500
+        )
+    )
+);
+
+
+// -----------------------------------------------------------------------------
+// Extract breakpoints from config for include-media library.
+// -----------------------------------------------------------------------------
+$breakpoints: ();
+
+@each $name, $data in _("breakpoints") {
+    $breakpoints: map-merge($breakpoints, ($name: map-get($data, "min-width")));
+}

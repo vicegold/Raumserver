@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// Define your global functions in here!
+// -----------------------------------------------------------------------------
+@function _($keys...) {
+    $track: "";
+    $map: $config;
+
+    // Global config map is not set, pretty bad
+    @if not global-variable-exists("config") {
+        @error "Global variable \"$config\" not defined but needed for _(). Aborting call.";
+    }
+
+    @each $key in $keys {
+
+        // Trying to access a specific part of the config map has failed
+        @if not map-has-key($map, $key) {
+            @error "No \"#{$key}\" found in \"$config#{$track}\". Property omitted.";
+        }
+
+        $track: $track + "." + $key;
+        $map: map-get($map, $key);
+    }
+
+    @return $map;
+}
