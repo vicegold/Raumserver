@@ -31,4 +31,5 @@
   display: flex;
   align-items: stretch;
   height: calc(100vh - #{$header} - #{$player});
+  align-content: stretch;
 }

@@ -17,6 +17,10 @@
   font-size: 0.9rem;
   display: flex;
   align-items: center;
+
+  &:hover {
+    color: lighten($color-gray--lighter, 45%);
+  }
 }
 
 .rsp-menu__item--active {
